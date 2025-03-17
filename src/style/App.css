@@ -2,7 +2,7 @@
   background: url('./img/main-bg.jpg') no-repeat center ;
   height: 100vh;
   padding-inline: 24px;
-  padding-top: 50%;
+  padding-top: 30%;
 }
 .starter-page {
   position: relative;
@@ -36,5 +36,10 @@
      0px -2px 0px 3px rgba(20, 14, 102, 1) inset;
     text-transform: uppercase;
     padding-block: 12px;
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: 5%;
   }
 }

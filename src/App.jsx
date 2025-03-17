@@ -24,7 +24,7 @@ function App() {
       <div className='starter-page'>
         <img src="./public/img/game-icon.svg" alt="" />
         <button><img src="/img/play-button.svg" alt="" /></button>
-        <button className='how-to-play-bt'>How To play</button>
+        <button className='how-to-play-btn'>How To play</button>
         <div className='login-register'>
           <button>Login</button>
           <button>Register</button>
