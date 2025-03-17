@@ -8,7 +8,7 @@ export default function Category() {
  console.log(categories)
   
 
-  return(
+  return (
     <div className="category-area">
       {/* <div className="category-header">
         <img className="back-icon" src="./img/back-icon.svg"/>
