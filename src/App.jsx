@@ -23,7 +23,7 @@ function App() {
     <div className='container'>
       <div className='starter-page'>
         <img src="./public/img/game-icon.svg" alt="" />
-        <button><img src="/img/play-button.svg" alt="" /></button>
+        <button className='play-btn'><img src="/img/play-button.svg" alt="" /></button>
         <button className='how-to-play-btn'>How To play</button>
         <div className='login-register'>
           <button>Login</button>
@@ -33,7 +33,7 @@ function App() {
       
     </div>
     <DataContext.Provider value={{data}}>
-      <Category />
+      {/* <Category /> */}
     </DataContext.Provider>
     </>
   )
