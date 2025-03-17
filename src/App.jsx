@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
 
    async function getData() {
-      const {categories} = await fetch("/public/data/data.json").then(res => res.json());
+      const categories = await fetch("/public/data/data.json").then(res => res.json());
       setData(categories);
       console.log(categories);
     } 
@@ -32,7 +32,7 @@ function App() {
       </div>
       
     </div>
-    <DataContext.Provider value={{data}}>
+    <DataContext.Provider value={data}>
       {/* <Category /> */}
     </DataContext.Provider>
     </>
