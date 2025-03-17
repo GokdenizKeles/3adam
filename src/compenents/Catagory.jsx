@@ -5,12 +5,12 @@ export default function Category() {
  const categories = useContext(DataContext);
  
 
- console.log(categories)
+ console.log(categories);
   
 
   return (
     <div className="category-area">
-      {/* <div className="category-header">
+      <div className="category-header">
         <img className="back-icon" src="./img/back-icon.svg"/>
         <h4>Pick a Category</h4>
       </div>
@@ -18,7 +18,7 @@ export default function Category() {
           {categories.map(x => 
             <h6>{x.categoryName}</h6>
            )}
-        </div> */}
+        </div>
     </div>
   )
 }

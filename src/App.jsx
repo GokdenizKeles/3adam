@@ -11,9 +11,9 @@ function App() {
   useEffect(() => {
 
     async function getData() {
-      const { categories } = await fetch("/data/data.json").then(res => res.json());
-      setData(categories);
-      console.log(categories);
+      const category  = await fetch("/data/data.json").then(res => res.json());
+      setData(category);
+      console.log(category);
     }
     getData();
 
@@ -32,7 +32,7 @@ function App() {
           </div>
         </div>
 
-        <DataContext.Provider value={{ data }}>
+        <DataContext.Provider value={ data}>
           <Category />
           <HowToPlay />
 
