@@ -1,6 +1,4 @@
-body {
-  background: url('./img/main-bg.jpg') no-repeat top ;
-
+.container {
   padding: 30% 24px 64px;
 }
 .starter-page {

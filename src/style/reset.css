@@ -11,6 +11,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: "Mouse Memoirs", sans-serif;
+  background: url('./img/main-bg.jpg') no-repeat top ;
+  /* padding: 30% 24px 64px; */
 }
 
 img, picture, video, canvas, svg {
