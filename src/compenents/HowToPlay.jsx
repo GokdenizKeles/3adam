@@ -1,11 +1,12 @@
 import "../style/HowToPlay.css"
+import { Link } from "./Router"
 
 
 export default function HowToPlay() {
   return (
     <>
       <div className="how-to-play-header">
-        <img src="/img/back-icon.svg" alt="" />
+        <Link href="/"><img src="/img/back-icon.svg" alt="" /></Link>
         <h1>How To Play</h1>
       </div>
 
