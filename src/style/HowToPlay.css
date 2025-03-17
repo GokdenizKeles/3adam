@@ -1,7 +1,12 @@
+.how-to-play-area {
+  margin-block: 32px 60px;
+}
+
 .how-to-play-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 80px;
   img {
     width: 40px;
     height: 40px;
@@ -11,7 +16,7 @@
     font-size: 48px;
     line-height: 120%;
     background: linear-gradient(180deg, #67b6ff 16.42%, #ffffff 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #243041;
   }

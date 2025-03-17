@@ -4,7 +4,7 @@ import { Link } from "./Router"
 
 export default function HowToPlay() {
   return (
-    <>
+    <div className="how-to-play-area">
       <div className="how-to-play-header">
         <Link href="/"><img src="/img/back-icon.svg" alt="" /></Link>
         <h1>How To Play</h1>
@@ -25,7 +25,7 @@ export default function HowToPlay() {
         <h2>Win or lose</h2>
         <p>You win by guessing all the letters in the word before your health runs out. If the health bar empties before you guess the word, you lose.</p>
       </div>
-    </>
+    </div>
   )
 
 }

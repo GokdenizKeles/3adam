@@ -1,11 +1,13 @@
+
 .category-area {
-  height: 100vh;
+  margin-block: 32px 80px;
 }
 
 .category-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .category-header h4 {
