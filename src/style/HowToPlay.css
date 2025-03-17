@@ -1,0 +1,36 @@
+.how-to-play-header {
+ display: flex;
+ align-items: center;
+
+
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 32px 40px;
+  background: #FFFFFF;
+
+  h2 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+}
+span {
+  font-weight: 400;
+  font-size: 88px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #2463FF;
+}
+
+p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  color: #887DC0;
+}
+}
