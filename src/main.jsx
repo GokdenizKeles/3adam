@@ -4,6 +4,7 @@ import Router from './compenents/Router.jsx'
 import HowToPlay from './compenents/HowToPlay.jsx';
 import Category from './compenents/Catagory.jsx';
 import StartPage from './compenents/StartPage.jsx';
+import Game from './compenents/Game.jsx';
 
 const routes = [
     {
@@ -17,6 +18,10 @@ const routes = [
     {
         url: '/catagory',
         component: <Category />
+    },
+    {
+        url: '/game',
+        component: <Game />
     },
 
 
