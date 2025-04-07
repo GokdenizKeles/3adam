@@ -1,9 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect,useRef } from "react";
 import "../style/game.css"
 import { useState } from "react";
+import { Link } from "./Router"
 
 
 export default  function Game({selectedCategories, selectedWord}) {
+
+  const dialogref = useRef(null);
   const [clickedLetters, setClickedLetters] = useState([]);
   const letters = [
     "A", "B", "C", "D", "E", "F", "G", "H", "I",
@@ -25,12 +28,17 @@ export default  function Game({selectedCategories, selectedWord}) {
       console.log(x)
       console.log(clickedLetters);
   }
+
+  function openDialog() {
+      dialogref.current.showModal();
+  }
   
   return(
+    <>
     <div className="game-area">
       <div className="game-header">
         <div className="flex">
-          <img src="/img/hamburger-menu.svg"/>
+          <img onClick={openDialog} src="/img/hamburger-menu.svg"/>
           <h5>{selectedCategories}</h5>
         </div>
         <div className="flex">
@@ -53,5 +61,15 @@ export default  function Game({selectedCategories, selectedWord}) {
         )}
       </div>
     </div>
+    <dialog className="game-dialog" ref={dialogref}>
+      <img src="/img/paused.svg" alt="Paused" />
+      <div className="dialog-btns">
+        <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
+        <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+        <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
+      </div>
+  </dialog>
+
+    </>
   )
 }

@@ -98,6 +98,71 @@
   text-align: center;
   font-size: 40px;
 }
+
+
+/* dialog */
+
+
+.game-dialog {
+  position: relative;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 72px;
+  background: linear-gradient(to bottom, #2e3aff, #1e1e80);
+  padding: 40px 30px;
+  width: 324px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding-top: 120px;
+}
+
+.game-dialog img {
+  position: absolute;
+  margin-top: -124px;
+  width: 186px;
+  height: 113px;
+  z-index: 99999;
+}
+
+.game-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.dialog-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dialog-btns button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+
+}
+
+.btn.blue {
+  background: linear-gradient(to right, #3a8dff, #376eff);
+}
+
+.btn.pink {
+  background: linear-gradient(to right, #ff5d9e, #f063dd);
+}
+
+
+
+
  
 
  
