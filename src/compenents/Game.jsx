@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import "../style/game.css"
+import { useState } from "react";
 
 
 export default  function Game({selectedCategories, selectedWord}) {
+  const [clickedLetters, setClickedLetters] = useState([]);
   const letters = [
     "A", "B", "C", "D", "E", "F", "G", "H", "I",
     "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -10,12 +12,25 @@ export default  function Game({selectedCategories, selectedWord}) {
   ];
   function specialChars() {
     const wordChars = selectedWord.name.toUpperCase().split(" ").join("").split("");
-    const isSpecial = wordChars.filter(x => letters.includes(x.toUpperCase()))
+    const isSpecial = wordChars.filter(x => letters.includes(x.toUpperCase()));
 
     return isSpecial
   }
   const special = specialChars()
   console.log(special);
+
+  useEffect(() => {
+    console.log("clickedLetters güncellendi:", clickedLetters);
+  }, [clickedLetters]);
+
+  // Harfe tıklama
+  function handleLetterClick(x) {
+    if (!clickedLetters.includes(x)) {
+      setClickedLetters(prev => [...prev, x]);
+      console.log(x)
+      console.log(clickedLetters);
+    }
+  }
   
   return(
     <div className="game-area">
@@ -32,11 +47,15 @@ export default  function Game({selectedCategories, selectedWord}) {
         </div>
       </div>
       <div className="game-container">
-        <h5></h5>
+        {special.map(x => 
+        <div key={x.name} className={clickedLetters.includes(x) ? "correct-box": "empty-box"}>
+          <h2 className= {clickedLetters.includes(x) ? "correct": "hang-area"}>{x}</h2>
+        </div>
+        )}
       </div>
       <div className="game-letters">
         {letters.map(x => 
-          <button key={x}>{x}</button>
+          <button disabled = {clickedLetters.includes(x)} onClick={() => handleLetterClick(x)} key={x}>{x}</button>
         )}
       </div>
     </div>
