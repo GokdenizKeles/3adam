@@ -19,17 +19,11 @@ export default  function Game({selectedCategories, selectedWord}) {
   const special = specialChars()
   console.log(special);
 
-  useEffect(() => {
-    console.log("clickedLetters güncellendi:", clickedLetters);
-  }, [clickedLetters]);
 
-  // Harfe tıklama
   function handleLetterClick(x) {
-    if (!clickedLetters.includes(x)) {
       setClickedLetters(prev => [...prev, x]);
       console.log(x)
       console.log(clickedLetters);
-    }
   }
   
   return(
