@@ -1,10 +1,10 @@
-import { useContext, useEffect,useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import "../style/game.css"
 import { useState } from "react";
 import { Link } from "./Router"
 
 
-export default  function Game({selectedCategories, selectedWord}) {
+export default function Game({ selectedCategories, selectedWord }) {
 
   const dialogref = useRef(null);
   const [clickedLetters, setClickedLetters] = useState([]);
@@ -24,51 +24,51 @@ export default  function Game({selectedCategories, selectedWord}) {
 
 
   function handleLetterClick(x) {
-      setClickedLetters(prev => [...prev, x]);
-      console.log(x)
-      console.log(clickedLetters);
+    setClickedLetters(prev => [...prev, x]);
+    console.log(x)
+    console.log(clickedLetters);
   }
 
   function openDialog() {
-      dialogref.current.showModal();
+    dialogref.current.showModal();
   }
-  
-  return(
+
+  return (
     <>
-    <div className="game-area">
-      <div className="game-header">
-        <div className="flex">
-          <img onClick={openDialog} src="/img/hamburger-menu.svg"/>
-          <h5>{selectedCategories}</h5>
-        </div>
-        <div className="flex">
-          <div className="health-bar">
-            <div className="w3-grey"></div>
+      <div className="game-area">
+        <div className="game-header">
+          <div className="flex">
+            <img onClick={openDialog} src="/img/hamburger-menu.svg" />
+            <h5>{selectedCategories}</h5>
           </div>
-          <img src="/img/heart-icon.svg"/>
+          <div className="flex">
+            <div className="health-bar">
+              <div className="w3-grey"></div>
+            </div>
+            <img src="/img/heart-icon.svg" />
+          </div>
+        </div>
+        <div className="game-container">
+          {special.map(x =>
+            <div key={x.name} className={clickedLetters.includes(x) ? "correct-box" : "empty-box"}>
+              <h2 className={clickedLetters.includes(x) ? "correct" : "hang-area"}>{x}</h2>
+            </div>
+          )}
+        </div>
+        <div className="game-letters">
+          {letters.map(x =>
+            <button disabled={clickedLetters.includes(x)} onClick={() => handleLetterClick(x)} key={x}>{x}</button>
+          )}
         </div>
       </div>
-      <div className="game-container">
-        {special.map(x => 
-        <div key={x.name} className={clickedLetters.includes(x) ? "correct-box": "empty-box"}>
-          <h2 className= {clickedLetters.includes(x) ? "correct": "hang-area"}>{x}</h2>
+      <dialog className="game-dialog" ref={dialogref}>
+        <img src="/img/paused.svg" alt="Paused" />
+        <div className="dialog-btns">
+          <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
+          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
-        )}
-      </div>
-      <div className="game-letters">
-        {letters.map(x => 
-          <button disabled = {clickedLetters.includes(x)} onClick={() => handleLetterClick(x)} key={x}>{x}</button>
-        )}
-      </div>
-    </div>
-    <dialog className="game-dialog" ref={dialogref}>
-      <img src="/img/paused.svg" alt="Paused" />
-      <div className="dialog-btns">
-        <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
-        <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
-        <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
-      </div>
-  </dialog>
+      </dialog>
 
     </>
   )

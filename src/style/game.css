@@ -5,7 +5,7 @@
   row-gap: 24px;
   margin-top: 118px;
   flex-wrap: wrap;
-  
+
   button {
     font-weight: 400;
     font-size: 24px;
@@ -15,7 +15,6 @@
     padding: 10px;
     border-radius: 8px;
     border: 0;
-
   }
 }
 
@@ -31,7 +30,6 @@
   background: #261676;
   height: 10px;
   width: 100%;
-
 }
 
 .game-header {
@@ -45,7 +43,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  img{
+  img {
     height: 26px;
     width: 24px;
   }
@@ -66,7 +64,6 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-block: 76px 118px;
-
 }
 
 .empty-box {
@@ -77,7 +74,6 @@
   opacity: 25%;
   box-shadow: 0px 1px 0px 6px rgba(60, 116, 255, 1) inset;
   box-shadow: 0px -2px 0px 3px rgba(20, 14, 102, 1) inset;
-
 }
 
 .correct-box {
@@ -91,7 +87,7 @@
   color: transparent;
   text-align: center;
   font-size: 40px;
- }
+}
 
 .correct {
   color: white;
@@ -99,15 +95,10 @@
   font-size: 40px;
 }
 
-
 /* dialog */
 
-
 .game-dialog {
-  position: relative;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
   border: none;
   border-radius: 72px;
   background: linear-gradient(to bottom, #2e3aff, #1e1e80);
@@ -120,16 +111,11 @@
 
 .game-dialog img {
   position: absolute;
-  margin-top: -124px;
-  width: 186px;
-  height: 113px;
-  z-index: 99999;
 }
 
 .game-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.4);
 }
-
 
 .dialog-btns {
   display: flex;
@@ -149,7 +135,6 @@
   text-align: center;
   text-transform: uppercase;
   border: none;
-
 }
 
 .btn.blue {
@@ -159,10 +144,3 @@
 .btn.pink {
   background: linear-gradient(to right, #ff5d9e, #f063dd);
 }
-
-
-
-
- 
-
- 
