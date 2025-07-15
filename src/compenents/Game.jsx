@@ -1,10 +1,13 @@
 import { useContext, useEffect,useRef } from "react";
 import "../style/game.css"
 import { useState } from "react";
-import { Link } from "./Router"
+import { Link } from "./Router";
+
+
 
 
 export default  function Game({selectedCategories, selectedWord}) {
+
 
   const dialogref = useRef(null);
   const [clickedLetters, setClickedLetters] = useState([]);
@@ -17,10 +20,17 @@ export default  function Game({selectedCategories, selectedWord}) {
     const wordChars = selectedWord.name.toUpperCase().split(" ").join("").split("");
     const isSpecial = wordChars.filter(x => letters.includes(x.toUpperCase()));
 
-    return isSpecial
+    return isSpecial;
   }
-  const special = specialChars()
+  const special = specialChars();
   console.log(special);
+
+   useEffect(() => {
+    const isAllFound = special.every(letter => clickedLetters.includes(letter));
+    if (isAllFound && special.length > 0) {
+      dialogref.current?.showModal();
+    }
+  }, [clickedLetters, special]);
 
 
   function handleLetterClick(x) {

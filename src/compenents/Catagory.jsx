@@ -28,7 +28,7 @@ export default function Category() {
       {selectedCategories === null ? (
         <div className="category-area">
           <div className="category-header">
-            <Link to="/">
+            <Link href="/">
               <img className="back-icon" src="./img/back-icon.svg" alt="Back" />
             </Link>
             <h4>Pick a Category</h4>

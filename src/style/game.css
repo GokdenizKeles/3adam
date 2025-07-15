@@ -20,18 +20,22 @@
 }
 
 .health-bar {
-  border: 1px solid gray;
-  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 8px;
   height: 16px;
   width: 57px;
+  background: white; 
+  overflow: hidden;   
 }
 
 .w3-grey {
-  border: 1px solid gray;
-  background: #261676;
-  height: 10px;
+  height: 8px;
   width: 100%;
-
+  background: rgba(38, 22, 118, 1);
+  border-radius: 8px;
+  transition: width 0.3s ease;
 }
 
 .game-header {
