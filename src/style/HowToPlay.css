@@ -54,3 +54,46 @@
     grid-column: 2 span;
   }
 }
+
+@media (width >= 768px) {
+  .how-to-play-header h1 {
+    text-align: center;
+    margin-inline: auto;
+    font-weight: 400;
+    font-size: 104px;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+  }
+  .how-to-play-header img {
+    height: 54px;
+    width: 54px;
+  }
+}
+
+@media (width >= 1440px) {
+.card-area {
+  display: flex;
+  gap: 32px;
+}
+.card span{
+  font-weight: 400;
+  font-size: 88px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.card h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  text-align: center;
+}
+.card p {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  text-align: center;
+}
+}

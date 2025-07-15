@@ -73,3 +73,9 @@ a {
 button {
   cursor: pointer;
 }
+
+@media(width >= 768px) {
+  body {
+     background: url("./img/main-bg.jpg") no-repeat center;
+  }
+}

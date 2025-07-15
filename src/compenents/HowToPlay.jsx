@@ -9,7 +9,8 @@ export default function HowToPlay() {
         <Link href="/"><img src="/img/back-icon.svg" alt="" /></Link>
         <h1>How To Play</h1>
       </div>
-
+      
+      <div className="card-area">
       <div className="card">
         <span>01</span>
         <h2>Choose a category</h2>
@@ -25,6 +26,7 @@ export default function HowToPlay() {
         <h2>Win or lose</h2>
         <p>You win by guessing all the letters in the word before your health runs out. If the health bar empties before you guess the word, you lose.</p>
       </div>
+    </div>
     </div>
   )
 

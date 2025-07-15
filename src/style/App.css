@@ -1,6 +1,7 @@
 .container {
   padding-inline: 26px;
 }
+
 .starter-page {
   position: relative;
   padding: 138px 30px 64px;
@@ -61,5 +62,43 @@
       color: #fff;
       padding-block: 8px;
     }
+  }
+}
+
+@media (width >= 768px) {
+  .container {
+    padding-inline: 40px 48px;
+  }
+  .starter-page img{
+    left: 32%;
+  }
+  .starter-page button img {
+    margin-inline: 240px;
+  }
+ 
+  .starter-page .how-to-play-btn {
+    width: 50%;
+    color: white;
+    margin-inline: 165px;
+  }
+}
+
+@media (width >= 1440px) {
+  .container {
+    padding-inline: 112px;
+  }
+  .starter-page {
+    padding-inline: 200px;
+  }
+   .starter-page img{
+    left: 37%;
+  }
+   .starter-page button img {
+    margin-inline: 320px;
+  }
+    .starter-page .how-to-play-btn {
+    width: 50%;
+    color: white;
+    margin-inline: 200px;
   }
 }

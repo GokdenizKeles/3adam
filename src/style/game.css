@@ -109,7 +109,7 @@
 
 .game-dialog {
   position: relative;
-  top: 90%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: none;
@@ -162,6 +162,57 @@
 
 .btn.pink {
   background: linear-gradient(to right, #ff5d9e, #f063dd);
+}
+
+@media (width >= 768px) {
+  .game-header h5 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 5%;
+  }
+  .flex img {
+    width: 64px;
+    height: 64px;
+  }
+  .health-bar {
+    width: 160px;
+  }
+  .empty-box .correct .hang-area {
+    width: 88px;
+    height: 112px;
+  }
+  .game-letters {
+    width: 704px;
+  }
+
+  .game-letters button {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 5%;
+    gap: 16px;
+  }
+  .game-letters {
+    gap: 16px;
+  }
+}
+
+@media (width >= 1440px) {
+  .game-container {
+    padding-inline: 133px 112px;
+  }
+  .health-bar {
+    width: 240px;
+  }
+   .empty-box .correct .hang-area {
+    width: 112px;
+    height: 128px;
+  }
+   .game-letters {
+    width: 1173px;
+    padding-inline: 133px;
+  }
 }
 
 
