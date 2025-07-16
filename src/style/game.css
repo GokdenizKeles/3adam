@@ -196,6 +196,15 @@
   .game-letters {
     gap: 16px;
   }
+   .game-dialog {
+    width: 529px;
+  }
+  .game-dialog img {
+    left: 30%;
+  }
+  .dialog-btns {
+    padding-inline: 129px;
+  }
 }
 
 @media (width >= 1440px) {
@@ -213,6 +222,7 @@
     width: 1173px;
     padding-inline: 133px;
   }
+ 
 }
 
 

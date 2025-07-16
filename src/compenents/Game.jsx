@@ -4,6 +4,8 @@ import { Link } from "./Router";
 
 export default function Game({ selectedCategories, selectedWord }) {
   const dialogref = useRef(null);
+  const winDialogref = useRef(null);
+  const loseDialogref = useRef(null);
   const [clickedLetters, setClickedLetters] = useState([]);
   const [health, setHealth] = useState(100);
 
@@ -23,13 +25,13 @@ export default function Game({ selectedCategories, selectedWord }) {
   useEffect(() => {
     const isAllFound = special.every(letter => clickedLetters.includes(letter));
     if (isAllFound && special.length > 0) {
-      dialogref.current?.showModal();
+      winDialogref.current?.showModal();
     }
   }, [clickedLetters, special]);
 
   useEffect(() => {
     if (health === 0) {
-      dialogref.current?.showModal();
+      loseDialogref.current?.showModal();
     }
   }, [health]);
 
@@ -86,6 +88,22 @@ export default function Game({ selectedCategories, selectedWord }) {
 
       <dialog className="game-dialog" ref={dialogref}>
         <img src="/img/paused.svg" alt="Paused" />
+        <div className="dialog-btns">
+          <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
+          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
+        </div>
+      </dialog>
+         <dialog className="game-dialog" ref={winDialogref}>
+        <img src="/img/win.svg" alt="Win" />
+        <div className="dialog-btns">
+          <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
+          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
+        </div>
+      </dialog>
+         <dialog className="game-dialog" ref={loseDialogref}>
+        <img src="/img/lose.svg" alt="lose" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
           <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
