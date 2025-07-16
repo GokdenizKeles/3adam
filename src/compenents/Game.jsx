@@ -44,10 +44,8 @@ export default function Game({ selectedCategories, selectedWord }) {
 
   function openDialog() {
     dialogref.current.showModal();
-    dialogref.current.showModal();
-  }
 
-  return (
+  }
 
   return (
     <>
