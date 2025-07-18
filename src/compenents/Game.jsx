@@ -91,7 +91,7 @@ export default function Game({ selectedCategories, selectedWord }) {
         <img src="/img/paused.svg" alt="Paused" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
-          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/category"><button className="btn blue">NEW CATEGORY</button></Link>
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
       </dialog>
@@ -99,7 +99,7 @@ export default function Game({ selectedCategories, selectedWord }) {
         <img src="/img/win.svg" alt="Win" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
-          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/category"><button className="btn blue">NEW CATEGORY</button></Link>
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
       </dialog>
@@ -107,7 +107,7 @@ export default function Game({ selectedCategories, selectedWord }) {
         <img src="/img/lose.svg" alt="lose" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
-          <Link href="/catagory"><button className="btn blue">NEW CATEGORY</button></Link>
+          <Link href="/category"><button className="btn blue">NEW CATEGORY</button></Link>
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
       </dialog>

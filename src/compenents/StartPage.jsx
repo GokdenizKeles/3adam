@@ -5,7 +5,7 @@ export default function StartPage() {
 
     <div className='starter-page'>
       <img src="/img/game-icon.svg" alt="" />
-      <Link href="/catagory'"><img src="/img/play-button.svg" alt="" /></Link>
+      <Link href="/category'"><img src="/img/play-button.svg" alt="" /></Link>
       <button className='how-to-play-btn'><Link href="/how-to-play">How To Play</Link></button>
       {/* <div className='login-register'>
         <button>Login</button>

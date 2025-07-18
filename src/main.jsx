@@ -16,7 +16,7 @@ const routes = [
         component: <HowToPlay />
     },
     {
-        url: '/catagory',
+        url: '/category',
         component: <Category />
     },
     {
