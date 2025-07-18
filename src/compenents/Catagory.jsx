@@ -10,17 +10,17 @@ export default function Category() {
   const categories = useContext(DataContext);
   const [selectedCategories, setSelectedCategories] = useState(null);
   const [selectedWord, setSelectedWord] = useState("");
-  
+
   useEffect(() => {
 
-  },[selectedCategories])
-  
+  }, [selectedCategories])
+
   function handleClick(category) {
     setSelectedCategories(category);
     const length = Math.floor(Math.random() * categories.find(x => x.categoryName === category).items.length)
     setSelectedWord(categories.find(x => x.categoryName === category).items[length])
   }
-  
+
   console.log(selectedWord);
 
   return (
@@ -35,16 +35,16 @@ export default function Category() {
           </div>
           <div className="categories">
             {categories.map(x => (
-              <h6 key={x.categoryName} onClick={()=> handleClick(x.categoryName)}>
+              <h6 key={x.categoryName} onClick={() => handleClick(x.categoryName)}>
                 {x.categoryName}
               </h6>
             ))}
           </div>
         </div>
       ) : (
-        <Game selectedWord={selectedWord} selectedCategories={selectedCategories}/>
+        <Game selectedWord={selectedWord} selectedCategories={selectedCategories} />
       )}
-      
+
     </>
   )
 

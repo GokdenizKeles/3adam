@@ -1,10 +1,11 @@
 .game-letters {
-  width: 324px;
   display: flex;
   column-gap: 8px;
   row-gap: 24px;
   margin-top: 118px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 
   button {
     font-weight: 400;
@@ -25,8 +26,8 @@
   border-radius: 8px;
   height: 16px;
   width: 57px;
-  background: white; 
-  overflow: hidden;   
+  background: white;
+  overflow: hidden;
 }
 
 .w3-grey {
@@ -103,10 +104,11 @@
 /* dialog */
 
 .game-dialog {
-  position: relative;
+  /* position: relative;
   top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  margin: auto;
   border: none;
   border-radius: 72px;
   background: linear-gradient(to bottom, #2e3aff, #1e1e80);
@@ -117,9 +119,9 @@
   padding-top: 120px;
 }
 
-.game-dialog img {
+/* .game-dialog img {
   position: absolute;
-}
+} */
 
 .game-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.4);
@@ -184,15 +186,23 @@
   }
   .game-letters {
     gap: 16px;
+    justify-content: center;
+    margin: auto;
   }
-   .game-dialog {
+  .game-dialog {
     width: 529px;
   }
   .game-dialog img {
-    left: 30%;
+    /* left: 30%; */
+    margin-bottom: 24px;
   }
   .dialog-btns {
     padding-inline: 129px;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: auto;
   }
 }
 
@@ -203,20 +213,8 @@
   .health-bar {
     width: 240px;
   }
-   .empty-box .correct .hang-area {
+  .empty-box .correct .hang-area {
     width: 112px;
     height: 128px;
   }
-   .game-letters {
-    width: 1173px;
-    padding-inline: 133px;
-  }
- 
 }
-
-
-
-
- 
-
- 

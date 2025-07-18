@@ -23,6 +23,11 @@ const routes = [
         url: '/game',
         component: <Game />
     },
+    {
+        url: '/game/:category',
+        component: <Game />
+    }
+
 
 
 ];

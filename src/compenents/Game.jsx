@@ -38,7 +38,7 @@ export default function Game({ selectedCategories, selectedWord }) {
   function handleLetterClick(x) {
     setClickedLetters(prev => [...prev, x]);
     if (!special.includes(x)) {
-      setHealth(prev => Math.max(prev - 20, 0)); 
+      setHealth(prev => Math.max(prev - 20, 0));
     }
   }
 
@@ -95,7 +95,7 @@ export default function Game({ selectedCategories, selectedWord }) {
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
       </dialog>
-         <dialog className="game-dialog" ref={winDialogref}>
+      <dialog className="game-dialog" ref={winDialogref}>
         <img src="/img/win.svg" alt="Win" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
@@ -103,7 +103,7 @@ export default function Game({ selectedCategories, selectedWord }) {
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
       </dialog>
-         <dialog className="game-dialog" ref={loseDialogref}>
+      <dialog className="game-dialog" ref={loseDialogref}>
         <img src="/img/lose.svg" alt="lose" />
         <div className="dialog-btns">
           <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>

@@ -71,29 +71,36 @@
 }
 
 @media (width >= 1440px) {
-.card-area {
-  display: flex;
-  gap: 32px;
-}
-.card span{
-  font-weight: 400;
-  font-size: 88px;
-  line-height: 120%;
-  letter-spacing: 0%;
-  text-align: center;
-}
-.card h2 {
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 120%;
-  letter-spacing: 5%;
-  text-align: center;
-}
-.card p {
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 120%;
-  letter-spacing: 5%;
-  text-align: center;
-}
+  .card-area {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
+  .card span {
+    font-weight: 400;
+    font-size: 88px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  .card h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+  .card p {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 384px;
+  }
 }
