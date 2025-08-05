@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../style/game.css";
 import { Link } from "./Router";
 
-export default function Game({ selectedCategories, selectedWord}) {
+export default function Game({ selectedCategories, selectedWord }) {
   const dialogref = useRef(null);
   const winDialogref = useRef(null);
   const loseDialogref = useRef(null);
@@ -17,10 +17,12 @@ export default function Game({ selectedCategories, selectedWord}) {
   ];
 
   function specialChars() {
+    if (!selectedWord || !selectedWord.name) return []; // <--- güvenlik eklendi
     const wordChars = selectedWord.name.toUpperCase().split(" ").join("").split("");
     const isSpecial = wordChars.filter(x => letters.includes(x.toUpperCase()));
     return isSpecial;
   }
+
   const special = specialChars();
 
   useEffect(() => {
@@ -42,21 +44,21 @@ export default function Game({ selectedCategories, selectedWord}) {
       setHealth(prev => Math.max(prev - 20, 0));
     }
   }
-  // Keydown func
+
   useEffect(() => {
-  function handleKeyDown(event) {
-    const key = event.key.toUpperCase();
-    if (letters.includes(key) && !clickedLetters.includes(key))  {
-      handleLetterClick(key);
+    function handleKeyDown(event) {
+      const key = event.key.toUpperCase();
+      if (letters.includes(key) && !clickedLetters.includes(key)) {
+        handleLetterClick(key);
+      }
     }
-  }
 
-  window.addEventListener("keydown", handleKeyDown);
-  return () => {
-    window.removeEventListener("keydown", handleKeyDown);
-  };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
 
-}, [clickedLetters, special]); 
+  }, [clickedLetters, special]);
 
   function openDialog() {
     dialogref.current.showModal();
@@ -92,7 +94,7 @@ export default function Game({ selectedCategories, selectedWord}) {
 
         <div className="game-letters">
           {letters.map(x => (
-            <button key={x} disabled={clickedLetters.includes(x)} onClick={() => {handleLetterClick(x) }}>
+            <button key={x} disabled={clickedLetters.includes(x)} onClick={() => { handleLetterClick(x) }}>
               {x}
             </button>
           ))}

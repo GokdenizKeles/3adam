@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { DataContext } from "../App"
 import "../style/category.css"
-import { Link, usePage} from "./Router";
+import { Link, usePage } from "./Router";
 import Game from "./Game";
-import { use } from "react";
+
 
 export default function Category() {
   const page = usePage()
@@ -19,10 +19,35 @@ export default function Category() {
     setSelectedCategories(category);
     const length = Math.floor(Math.random() * categories.find(x => x.categoryName === category).items.length)
     setSelectedWord(categories.find(x => x.categoryName === category).items[length])
-    
+    window.location.hash = `/${category}`;
   }
 
+
   // console.log(selectedWord);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      const category = hash.replace(/^#\//, "");
+
+      if (category) {
+        setSelectedCategories(category);
+        const categoryData = categories.find(x => x.categoryName === category);
+        if (categoryData && categoryData.items.length) {
+          const randomIndex = Math.floor(Math.random() * categoryData.items.length);
+          setSelectedWord(categoryData.items[randomIndex]);
+        }
+      }
+    };
+
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [categories]);
 
   return (
     <>
@@ -43,8 +68,8 @@ export default function Category() {
           </div>
         </div>
       ) : (
-       <Game selectedWord={selectedWord} selectedCategories={selectedCategories} />
-  
+        <Game selectedWord={selectedWord} selectedCategories={selectedCategories} />
+
       )}
 
     </>
