@@ -24,7 +24,7 @@ const routes = [
         component: <Game />
     },
     {
-        url: '/game/:category',
+        url: '/game/:category/',
         component: <Game />
     }
 

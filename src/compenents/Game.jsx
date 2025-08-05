@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import "../style/game.css";
 import { Link } from "./Router";
 
-export default function Game({ selectedCategories, selectedWord }) {
+export default function Game({ selectedCategories, selectedWord}) {
   const dialogref = useRef(null);
   const winDialogref = useRef(null);
   const loseDialogref = useRef(null);
   const [clickedLetters, setClickedLetters] = useState([]);
   const [health, setHealth] = useState(100);
+
 
   const letters = [
     "A", "B", "C", "D", "E", "F", "G", "H", "I",
@@ -41,6 +42,21 @@ export default function Game({ selectedCategories, selectedWord }) {
       setHealth(prev => Math.max(prev - 20, 0));
     }
   }
+  // Keydown func
+  useEffect(() => {
+  function handleKeyDown(event) {
+    const key = event.key.toUpperCase();
+    if (letters.includes(key) && !clickedLetters.includes(key))  {
+      handleLetterClick(key);
+    }
+  }
+
+  window.addEventListener("keydown", handleKeyDown);
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+
+}, [clickedLetters, special]); 
 
   function openDialog() {
     dialogref.current.showModal();
@@ -52,7 +68,7 @@ export default function Game({ selectedCategories, selectedWord }) {
       <div className="game-area">
         <div className="game-header">
           <div className="flex">
-            <img onClick={openDialog} src="/img/hamburger-menu.svg" alt="Menu" />
+            <img className="hamburger-menu" onClick={openDialog} src="/img/hamburger-menu.svg" alt="Menu" />
             <h5>{selectedCategories}</h5>
           </div>
           <div className="flex">
@@ -76,11 +92,7 @@ export default function Game({ selectedCategories, selectedWord }) {
 
         <div className="game-letters">
           {letters.map(x => (
-            <button
-              key={x}
-              disabled={clickedLetters.includes(x)}
-              onClick={() => handleLetterClick(x)}
-            >
+            <button key={x} disabled={clickedLetters.includes(x)} onClick={() => {handleLetterClick(x) }}>
               {x}
             </button>
           ))}
@@ -98,7 +110,7 @@ export default function Game({ selectedCategories, selectedWord }) {
       <dialog className="game-dialog" ref={winDialogref}>
         <img src="/img/win.svg" alt="Win" />
         <div className="dialog-btns">
-          <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
+          <button onClick={() => winDialogref.current.close()} className="btn blue">CONTINUE</button>
           <Link href="/category"><button className="btn blue">NEW CATEGORY</button></Link>
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>
@@ -106,7 +118,6 @@ export default function Game({ selectedCategories, selectedWord }) {
       <dialog className="game-dialog" ref={loseDialogref}>
         <img src="/img/lose.svg" alt="lose" />
         <div className="dialog-btns">
-          <button onClick={() => dialogref.current.close()} className="btn blue">CONTINUE</button>
           <Link href="/category"><button className="btn blue">NEW CATEGORY</button></Link>
           <Link href="/"><button className="btn pink">QUIT GAME</button></Link>
         </div>

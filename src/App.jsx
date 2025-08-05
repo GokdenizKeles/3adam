@@ -14,7 +14,7 @@ function App() {
     async function getData() {
       const category = await fetch("/data/data.json").then(res => res.json());
       setData(category);
-      console.log(category);
+      // console.log(category);
     }
     getData();
 

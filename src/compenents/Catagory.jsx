@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { DataContext } from "../App"
 import "../style/category.css"
-import { Link, usePage } from "./Router";
+import { Link, usePage} from "./Router";
 import Game from "./Game";
 import { use } from "react";
 
@@ -19,9 +19,10 @@ export default function Category() {
     setSelectedCategories(category);
     const length = Math.floor(Math.random() * categories.find(x => x.categoryName === category).items.length)
     setSelectedWord(categories.find(x => x.categoryName === category).items[length])
+    
   }
 
-  console.log(selectedWord);
+  // console.log(selectedWord);
 
   return (
     <>
@@ -42,7 +43,8 @@ export default function Category() {
           </div>
         </div>
       ) : (
-        <Game selectedWord={selectedWord} selectedCategories={selectedCategories} />
+       <Game selectedWord={selectedWord} selectedCategories={selectedCategories} />
+  
       )}
 
     </>

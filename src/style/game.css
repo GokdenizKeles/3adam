@@ -50,8 +50,8 @@
   align-items: center;
   gap: 16px;
   img {
-    height: 26px;
-    width: 24px;
+    height: 34px;
+    width: 34px;
   }
   h5 {
     color: white;
@@ -116,12 +116,13 @@
   width: 324px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   text-align: center;
-  padding-top: 120px;
 }
 
-/* .game-dialog img {
-  position: absolute;
-} */
+.game-dialog img {
+  height: 113px;
+  width: 211px;
+  padding-bottom: 50px;
+}
 
 .game-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.4);
@@ -131,6 +132,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
 }
 
 .dialog-btns button {
